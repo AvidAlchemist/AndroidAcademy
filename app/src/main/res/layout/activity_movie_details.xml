@@ -247,7 +247,7 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/actor_2_text"
-        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/actor_1" />
 
     <TextView
@@ -255,7 +255,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Robert Downey Jr."
+        android:text="Chris Evans"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -268,7 +268,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Robert Downey Jr."
+        android:text="Mark Ruffalo"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -281,11 +281,11 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Robert Downey Jr."
+        android:text="Chris Hemsworth"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/guideline_cast_end"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/actor_3_text"
         app:layout_constraintTop_toBottomOf="@id/actor_4" />
 
