@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:padding="10dp"
-        android:text="< Back"
+        android:text=" Back"
         android:textColor="#7A7777"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,13 +156,13 @@
         android:id="@+id/movie_storyline_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/guideline_storyline_top"
-        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
-        android:textStyle="bold"
         android:text="Storyline"
-        android:textColor="#ECECEC"/>
+        android:textColor="#ECECEC"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_storyline_top" />
 
     <TextView
         android:id="@+id/movie_story_text"
@@ -177,5 +177,124 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/guideline_image_start"
         app:layout_constraintTop_toBottomOf="@id/movie_storyline_text" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cast_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="538dp" />
+
+    <TextView
+        android:id="@+id/movie_cast_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Cast"
+        android:textColor="#ECECEC"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_cast_top" />
+
+    <ImageView
+        android:id="@+id/actor_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/robert_downey_jr"
+        app:layout_constraintEnd_toStartOf="@id/actor_2_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_cast_text" />
+
+    <ImageView
+        android:id="@+id/actor_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/chris_evans"
+        app:layout_constraintEnd_toStartOf="@id/actor_3"
+        app:layout_constraintStart_toEndOf="@id/actor_1"
+        app:layout_constraintTop_toBottomOf="@id/movie_cast_text" />
+
+    <ImageView
+        android:id="@+id/actor_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/mark_ruffalo"
+        app:layout_constraintEnd_toStartOf="@id/actor_4"
+        app:layout_constraintStart_toEndOf="@id/actor_2"
+        app:layout_constraintTop_toBottomOf="@id/movie_cast_text" />
+
+    <ImageView
+        android:id="@+id/actor_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/chris_hemsworth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actor_3"
+        app:layout_constraintTop_toBottomOf="@id/movie_cast_text" />
+
+    <TextView
+        android:id="@+id/actor_1_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Robert Downey Jr."
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/actor_2_text"
+        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
+        app:layout_constraintTop_toBottomOf="@id/actor_1" />
+
+    <TextView
+        android:id="@+id/actor_2_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Robert Downey Jr."
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/actor_3_text"
+        app:layout_constraintStart_toEndOf="@id/actor_1_text"
+        app:layout_constraintTop_toBottomOf="@id/actor_2" />
+
+    <TextView
+        android:id="@+id/actor_3_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Robert Downey Jr."
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/actor_4_text"
+        app:layout_constraintStart_toEndOf="@id/actor_2_text"
+        app:layout_constraintTop_toBottomOf="@id/actor_3" />
+
+    <TextView
+        android:id="@+id/actor_4_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Robert Downey Jr."
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guideline_cast_end"
+        app:layout_constraintStart_toEndOf="@id/actor_3_text"
+        app:layout_constraintTop_toBottomOf="@id/actor_4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cast_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="395dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
