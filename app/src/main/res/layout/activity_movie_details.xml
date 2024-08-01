@@ -84,67 +84,17 @@
         app:layout_constraintStart_toEndOf="@id/guideline_image_start"
         app:layout_constraintTop_toBottomOf="@id/movie_name_text" />
 
-    <ImageView
-        android:id="@+id/rating_star_1"
-        android:layout_width="16dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/star_icon_pink"
-        app:layout_constraintEnd_toStartOf="@id/rating_star_2"
-        app:layout_constraintStart_toEndOf="@id/guideline_image_start"
-        app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
-
-    <ImageView
-        android:id="@+id/rating_star_2"
-        android:layout_width="16dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/star_icon_pink"
-        app:layout_constraintEnd_toStartOf="@id/rating_star_3"
-        app:layout_constraintStart_toEndOf="@id/rating_star_1"
-        app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
-
-    <ImageView
-        android:id="@+id/rating_star_3"
-        android:layout_width="16dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/star_icon_pink"
-        app:layout_constraintEnd_toStartOf="@id/rating_star_4"
-        app:layout_constraintStart_toEndOf="@id/rating_star_2"
-        app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
-
-    <ImageView
-        android:id="@+id/rating_star_4"
-        android:layout_width="16dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/star_icon_pink"
-        app:layout_constraintEnd_toStartOf="@id/rating_star_5"
-        app:layout_constraintStart_toEndOf="@id/rating_star_3"
-        app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
-
-    <ImageView
-        android:id="@+id/rating_star_5"
-        android:layout_width="16dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/star_icon"
-        app:layout_constraintEnd_toStartOf="@id/movie_reviews_text"
-        app:layout_constraintStart_toEndOf="@id/rating_star_4"
-        app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
-
     <TextView
         android:id="@+id/movie_reviews_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:gravity="center"
         android:text="@string/reviews_amount"
         android:textColor="#6D6D80"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/guideline_image_end"
-        app:layout_constraintStart_toEndOf="@id/rating_star_5"
         app:layout_constraintTop_toBottomOf="@id/movie_tagline_text" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -306,5 +256,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/actor_3_text"
         app:layout_constraintTop_toBottomOf="@id/actor_4" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rating="4"
+        android:progressTint="#FF3466"
+        android:secondaryProgressTint="@color/black"
+        android:progressBackgroundTint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/movie_reviews_text"
+        app:layout_constraintStart_toStartOf="@+id/guideline_image_start"
+        app:layout_constraintTop_toBottomOf="@+id/movie_tagline_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
