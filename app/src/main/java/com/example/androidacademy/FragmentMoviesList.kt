@@ -7,10 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.androidacademy.data.models.Movie
+import com.example.androidacademy.domain.MoviesDataSource
 
 class FragmentMoviesList : Fragment() {
-    private var testText : TextView? = null
+    private var viewClick : View? = null
     private var fragmentClickListener : ClickListener? = null
+    private var recycler : RecyclerView? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,13 +25,16 @@ class FragmentMoviesList : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        testText = view.findViewById<TextView>(R.id.just_test).apply {
-            setOnClickListener{
-                fragmentClickListener?.moveToNextFragment()
-            }
-        }
+        recycler = view.findViewById(R.id.rv_movies)
+        recycler?.adapter = MoviesAdapter(clickListener)
+        recycler?.setLayoutManager(GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false))
     }
+
+    override fun onStart() {
+        super.onStart()
+        updateData()
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is ClickListener)
@@ -34,8 +42,25 @@ class FragmentMoviesList : Fragment() {
     }
 
     override fun onDetach() {
-        super.onDetach()
+        recycler = null
         fragmentClickListener = null
+        super.onDetach()
+    }
+
+    private fun updateData() {
+        (recycler?.adapter as? MoviesAdapter)?.apply {
+            bindMovies(MoviesDataSource().getMovies())
+        }
+    }
+
+    private fun doOnClick(movie : Movie) {
+        fragmentClickListener?.moveToNextFragment()
+    }
+
+    private val clickListener = object : OnRecyclerItemClicked{
+        override fun onClick(movie: Movie) {
+            doOnClick(movie)
+        }
     }
 
     companion object {
@@ -50,5 +75,6 @@ class FragmentMoviesList : Fragment() {
 
     interface ClickListener {
         fun moveToNextFragment()
+        fun moveToMoviesList()
     }
 }

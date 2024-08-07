@@ -14,4 +14,5 @@
     <string name="movie_name">Avengers: End Game</string>
     <string name="movie_age_limit">13+</string>
     <string name="top_menu">\u0020\u0020Back</string>
+    <string name="movies_list">\u0020\u0020Movies list</string>
 </resources>

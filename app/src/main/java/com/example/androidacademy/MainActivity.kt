@@ -12,18 +12,11 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*val textView = findViewById<TextView>(R.id.just_test)
-        textView.setOnClickListener {
+        if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
-                add(R.id.main_container,moviesDetailsFragment)
-                addToBackStack(null)
+                add(R.id.main_container, moviesListFragment)
                 commit()
             }
-        }*/
-
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.main_container,FragmentMoviesList.newInstance("academy"))
-            commit()
         }
     }
 
@@ -37,6 +30,13 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
         supportFragmentManager.beginTransaction().apply {
             addToBackStack(null)
             replace(R.id.main_container, moviesDetailsFragment)
+            commit()
+        }
+    }
+
+    override fun moveToMoviesList() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.main_container, moviesListFragment)
             commit()
         }
     }
