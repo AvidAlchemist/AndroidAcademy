@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
 
     override fun moveToMoviesList() {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_container, moviesListFragment)
+            replace(R.id.main_container, FragmentMoviesList.newInstance("academy"))
             commit()
         }
     }
