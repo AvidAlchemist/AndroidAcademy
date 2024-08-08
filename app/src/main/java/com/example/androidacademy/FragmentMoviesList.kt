@@ -54,7 +54,7 @@ class FragmentMoviesList : Fragment() {
     }
 
     private fun doOnClick(movie : Movie) {
-        fragmentClickListener?.moveToNextFragment()
+        fragmentClickListener?.moveToNextFragment(movie.name)
     }
 
     private val clickListener = object : OnRecyclerItemClicked{
@@ -74,7 +74,7 @@ class FragmentMoviesList : Fragment() {
     }
 
     interface ClickListener {
-        fun moveToNextFragment()
+        fun moveToNextFragment(name : String)
         fun moveToMoviesList()
     }
 }

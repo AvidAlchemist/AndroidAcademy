@@ -26,10 +26,28 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
         startActivity(intent)
     }
 
-    override fun moveToNextFragment() {
+    override fun moveToNextFragment(name : String) {
         supportFragmentManager.beginTransaction().apply {
             addToBackStack(null)
-            replace(R.id.main_container, moviesDetailsFragment)
+            when(name){
+                "Avengers: End Game" ->
+                    replace(R.id.main_container, FragmentMoviesDetails.newInstance("13+",
+                        "Avengers: End Game", "Action, Adventure, Fantasy", "4",
+                        "125 REVIEWS", R.string.storyline))
+                "Tenet" ->
+                    replace(R.id.main_container, FragmentMoviesDetails.newInstance("13+",
+                        "Tenet", "Action, Adventure, Fantasy", "4",
+                        "125 REVIEWS", R.string.storyline))
+                "Black Widow" ->
+                    replace(R.id.main_container, FragmentMoviesDetails.newInstance("13+",
+                        "Black Widow", "Action, Adventure, Fantasy", "4",
+                        "125 REVIEWS", R.string.storyline))
+                "Wonder Woman 1984" ->
+                    replace(R.id.main_container, FragmentMoviesDetails.newInstance("13+",
+                        "Wonder Woman 1984", "Action, Adventure, Fantasy", "4",
+                        "125 REVIEWS", R.string.storyline))
+            }
+
             commit()
         }
     }
